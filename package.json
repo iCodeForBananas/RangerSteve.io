@@ -60,7 +60,7 @@
     "moment": "^2.15.2",
     "morgan": "~1.6.1",
     "node-gameloop": "^0.1.0",
-    "node-sass": "^4.1.1",
+    "node-sass": "^7.0.0",
     "nodemon": "^1.18.3",
     "npm-install-webpack-plugin": "^4.0.4",
     "nunjucks": "^2.4.2",
