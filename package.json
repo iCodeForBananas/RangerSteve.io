@@ -57,7 +57,7 @@
     "lodash": "^4.16.4",
     "mini-css-extract-plugin": "^0.4.5",
     "mocha": "^3.1.2",
-    "moment": "^2.15.2",
+    "moment": "^2.29.2",
     "morgan": "~1.6.1",
     "node-gameloop": "^0.1.0",
     "node-sass": "^4.1.1",
