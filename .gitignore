@@ -1,39 +1,24 @@
-# folder view configs
-.DS_Store
-Desktop.ini
-
-# thumbnail cache
-._*
-Thumbs.db
-
-# files that might appear on external disks
-.Spotlight-V100
-.Trashes
-
-# build directories
-build
-dist
-dll
-old
-stats.json
-.happypack
-
-# node
-node_modules
+# Logs
 logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# bower
-bower_components
+node_modules
+dist
+dist-ssr
+*.local
 
-# other
-.sass-cache
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
 .idea
-public/main.js
-public/main.js.map
-public/main.css
-public/main.css.map
-/.vscode
-.env
-rangersteve**.json
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
