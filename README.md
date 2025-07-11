@@ -34,11 +34,22 @@ Run the backend deployment script:
 ./deploy-backend.sh
 ```
 
+Once the deployment is complete, get the backend endpoint URL:
+
+```bash
+aws cloudformation describe-stacks --stack-name rangersteve-backend --query "Stacks[0].Outputs[?OutputKey=='BackendEndpoint'].OutputValue" --output text
+```
+
 #### 2. Set Up the Frontend with AWS Amplify Console
 
-1. Connect your GitHub repository to AWS Amplify Console
-2. Configure the build settings using the provided amplify.yml
-3. Add the backend endpoint as an environment variable
+1. Log in to the AWS Management Console and navigate to AWS Amplify
+2. Click "New app" > "Host web app"
+3. Connect to your GitHub repository
+4. Use the default build settings or the provided amplify.yml
+5. Add the backend endpoint as an environment variable:
+   - Name: `BACKEND_URL`
+   - Value: [The backend endpoint URL from step 1]
+6. Click "Save and deploy"
 
 For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
 

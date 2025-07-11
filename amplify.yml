@@ -8,7 +8,7 @@ frontend:
       commands:
         - yarn build
   artifacts:
-    baseDirectory: dist
+    baseDirectory: public
     files:
       - '**/*'
   cache:
