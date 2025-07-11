@@ -1,10 +1,10 @@
 {
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www",
+    "start": "NODE_OPTIONS=--openssl-legacy-provider nodemon ./bin/www",
     "postinstall": "npm run build",
-    "dev": "webpack --watch --mode development",
-    "build": "webpack -p"
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider webpack --watch --mode development",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider webpack -p"
   },
   "dependencies": {
     "autoprefixer": "^6.5.1",
@@ -33,7 +33,7 @@
     "binary-pack": "^1.0.2",
     "body-parser": "~1.13.2",
     "browser-sync": "^2.17.5",
-    "browser-sync-webpack-plugin": "^1.1.3",
+    "browser-sync-webpack-plugin": "^2.3.0",
     "browserchannel": "^2.1.0",
     "chai": "^3.5.0",
     "classnames": "^2.2.5",
@@ -43,10 +43,10 @@
     "debug": "~2.2.0",
     "dotenv": "^4.0.0",
     "event-emitter": "^0.3.4",
-    "expose-loader": "^0.7.1",
+    "expose-loader": "^0.7.5",
     "express": "~4.13.1",
     "express-nunjucks": "^1.0.0",
-    "extract-text-webpack-plugin": "2.0.0-beta.5",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^0.9.0",
     "gameloop": "^1.1.4",
     "happypack": "^2.2.1",
@@ -60,7 +60,7 @@
     "moment": "^2.15.2",
     "morgan": "~1.6.1",
     "node-gameloop": "^0.1.0",
-    "node-sass": "^4.1.1",
+    "sass": "^1.69.5",
     "nodemon": "^1.18.3",
     "npm-install-webpack-plugin": "^4.0.4",
     "nunjucks": "^2.4.2",
