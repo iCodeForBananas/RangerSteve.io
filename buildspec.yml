@@ -1,0 +1,43 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 14
+    commands:
+      - echo Installing dependencies...
+      - npm install -g aws-cdk
+      - yarn install
+  
+  pre_build:
+    commands:
+      - echo Running tests...
+      - yarn test || true
+  
+  build:
+    commands:
+      - echo Building the application...
+      - yarn build
+      - echo Packaging CloudFormation template...
+      - aws cloudformation package --template-file template.yml --s3-bucket ${DEPLOYMENT_BUCKET} --output-template-file packaged.yml
+  
+  post_build:
+    commands:
+      - echo Deploying infrastructure...
+      - aws cloudformation deploy --template-file packaged.yml --stack-name ranger-steve-stack --parameter-overrides GitHubOAuthToken=${GITHUB_TOKEN} --capabilities CAPABILITY_IAM
+      - echo Deployment completed on `date`
+
+artifacts:
+  files:
+    - packaged.yml
+    - template.yml
+    - appspec.yml
+    - dist/**/*
+    - node_modules/**/*
+    - package.json
+    - scripts/**/*
+  discard-paths: no
+
+cache:
+  paths:
+    - node_modules/**/*
